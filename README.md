@@ -16,26 +16,11 @@ A simple job board platform built with Django, allowing companies to post jobs a
 ## ⚙️ Tech Stack
 - **Backend:** Django (Python)
 - **Frontend:** HTML, CSS, JavaScript, SCSS
-- **Database:** SQLite (default)
+- **Database:** PostgreSQL
 - **Email Integration:** Gmail SMTP
 - **Version Control:** Git + GitHub
 - **IDE Config:** VS Code
 
-## 📂 Project Structure
-Job-Board/
-│
-├── accounts/        # User management
-├── blog/            # Blog section
-├── contact/         # Contact form and email integration
-├── home/            # Homepage
-├── job/             # Core job board app
-├── media/           # Uploaded files and images
-├── static/          # CSS/JS/Images
-├── templates/       # HTML templates
-│
-├── db.sqlite3       # Default database
-├── manage.py                # Django project manager
-└── .gitignore       # Ignored files for Git
 
 ## 🖥️ Getting Started
 
@@ -53,16 +38,23 @@ python manage.py runserver
 6. Open in browser
 http://127.0.0.1:8000
 
-🔮 Future Improvements
-Add job application system (upload CV).
-
-Company dashboard for managing job posts.
-
-Improve UI with Bootstrap or TailwindCSS.
-
-Support for PostgreSQL database.
-
-Email notifications for new job postings.
 
 📌 Conclusion
 The Job Board Project is a practical example of building a Django-based job listing platform. It provides a foundation for learning user authentication, job management, and integration of multiple apps within a single Django project. With further development, it can evolve into a fully functional professional job board.
+
+```
+## 📂 Project Structure
+Job-Board/
+│
+├── accounts/        # User management
+├── blog/            # Blog section
+├── contact/         # Contact form and email integration
+├── home/            # Homepage
+├── job/             # Core job board app
+├── media/           # Uploaded files and images
+├── static/          # CSS/JS/Images
+├── templates/       # HTML templates
+│
+├── db.sqlite3       # Default database
+├── manage.py        # Django project manager
+└── .gitignore       # Ignored files for Git
