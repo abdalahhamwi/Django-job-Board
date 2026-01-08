@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "accounts",
+    
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -39,11 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # my apps
-    "job",
-    "bootstrap4",
-    "django_filters",
-    "contact",
-    "rest_framework",
+    
 ]
 
 MIDDLEWARE = [
@@ -128,15 +124,7 @@ STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    "/var/www/static/",
 ]
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "pythondeveloper6@gmail.com"
-EMAIL_HOST_PASSWORD = "kcpnwirvkmagqrlr"
-EMAIL_USE_TLS = True
-EMAIL_PORT = "587"
