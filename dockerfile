@@ -4,7 +4,14 @@ FROM python:3.12-slim-bookworm
 
 ENV PYTHONUNBUFFERED=1
 
-RUN apt-get update && apt-get -y install gcc libpq-dev
+RUN apt-get update && apt-get -y install \
+    gcc \
+    libpq-dev \
+    libjpeg-dev \
+    zlib1g-dev \
+    libpng-dev \
+    libfreetype6-dev
+
 
 WORKDIR /app
 
