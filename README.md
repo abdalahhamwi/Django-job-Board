@@ -23,17 +23,46 @@ A simple job board platform built with Django, allowing companies to post jobs a
 - **Containerization:** Docker & Docker Compose
 
 
-## 🐳 Running with Docker
-The easiest way to get the project running is using Docker. This handles all dependencies and environment setups for you. 
+# Django Job Board 💼
 
-1. Build and Start
+A simple job board platform built with Django, allowing companies to post jobs and users to browse and apply. The project is designed as a learning exercise to simulate popular job board websites like Indeed or LinkedIn but in a simplified form.
+
+---
+
+## 🚀 Features
+* **User authentication** (sign up, login, logout).
+* **Job management** (add, edit, delete jobs).
+* **Job listings** with details such as title, description, salary, and company.
+* **Blog section** for articles or news related to the job market.
+* **Contact page** with Gmail integration for sending messages.
+* **Media upload support** for images and files.
+* **Frontend** built with HTML, CSS, JavaScript, and SCSS.
+
+---
+
+## ⚙️ Tech Stack
+* **Backend:** Django (Python)
+* **Frontend:** HTML, CSS, JavaScript, SCSS
+* **Database:** PostgreSQL / SQLite
+* **Email Integration:** Gmail SMTP
+* **Containerization:** Docker & Docker Compose
+
+---
+
+## 🐳 Running with Docker
+
+The easiest way to get the project running is using **Docker**. This handles all dependencies, Python environment, and database setups for you.
+
+### 1. Build and Start the Containers
+Open your terminal in the project root directory and run:
+
 docker-compose up --build
 
-2. Setup Database
+### 2. Setup Database
 In a new terminal, run the migrations inside the container:
 docker-compose exec web python manage.py migrate
 
-3. Create Admin (Optional)
+### 3. Create Admin (Optional)
 docker-compose exec web python manage.py createsuperuser
 The site will be live at: http://127.0.0.1:8000
 
@@ -44,14 +73,17 @@ The site will be live at: http://127.0.0.1:8000
 2. https://github.com/abdalahhamwi/Django-job-Board.git
 3. Create a virtual environment and install dependencies
 python -m venv venv
+
 source venv/bin/activate   # Linux/Mac
+
 venv\Scripts\activate      # Windows
+
 pip install -r requirements.txt
-4. Apply migrations
+5. Apply migrations
 python manage.py migrate
-5. Run the development server
+6. Run the development server
 python manage.py runserver
-6. Open in browser
+7. Open in browser
 http://127.0.0.1:8000
 
 
@@ -76,25 +108,4 @@ Job-Board/
 ├── db.sqlite3       # Default database
 ├── manage.py        # Django project manager
 └── .gitignore       # Ignored files for Git
-
-
-
-
-## 🐳 Running with Docker
-The easiest way to get the project running is using Docker. This handles all dependencies and environment setups for you.
-
-1. Build and Start
-Bash
-
-docker-compose up --build
-2. Setup Database
-In a new terminal, run the migrations inside the container:
-
-Bash
-
-docker-compose exec web python manage.py migrate
-3. Create Admin (Optional)
-Bash
-
-docker-compose exec web python manage.py createsuperuser
-The site will be live at: http://127.0.0.1:8000
+```
