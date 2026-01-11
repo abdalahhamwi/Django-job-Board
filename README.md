@@ -1,6 +1,6 @@
 # Django-job-board
 
-A simple job board platform built with Django, allowing companies to post jobs and users to browse and apply. The project is designed as a learning exercise to simulate popular job board websites like Indeed or LinkedIn but in a simplified form.
+job board platform built with Django, allowing companies to post jobs and users to browse and apply. The project popular job board websites like Indeed or LinkedIn
 
 ## 🚀 Features
 - User authentication (sign up, login, logout).
@@ -60,9 +60,6 @@ python manage.py runserver
 7. Open in browser
 http://127.0.0.1:8000
 
-
-📌 Conclusion
-The Job Board Project is a practical example of building a Django-based job listing platform. It provides a foundation for learning user authentication, job management, and integration of multiple apps within a single Django project. With further development, it can evolve into a fully functional professional job board.
 
 ```
 ## 📂 Project Structure
