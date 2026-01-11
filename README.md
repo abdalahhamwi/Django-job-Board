@@ -23,32 +23,6 @@ A simple job board platform built with Django, allowing companies to post jobs a
 - **Containerization:** Docker & Docker Compose
 
 
-# Django Job Board 💼
-
-A simple job board platform built with Django, allowing companies to post jobs and users to browse and apply. The project is designed as a learning exercise to simulate popular job board websites like Indeed or LinkedIn but in a simplified form.
-
----
-
-## 🚀 Features
-* **User authentication** (sign up, login, logout).
-* **Job management** (add, edit, delete jobs).
-* **Job listings** with details such as title, description, salary, and company.
-* **Blog section** for articles or news related to the job market.
-* **Contact page** with Gmail integration for sending messages.
-* **Media upload support** for images and files.
-* **Frontend** built with HTML, CSS, JavaScript, and SCSS.
-
----
-
-## ⚙️ Tech Stack
-* **Backend:** Django (Python)
-* **Frontend:** HTML, CSS, JavaScript, SCSS
-* **Database:** PostgreSQL / SQLite
-* **Email Integration:** Gmail SMTP
-* **Containerization:** Docker & Docker Compose
-
----
-
 ## 🐳 Running with Docker
 
 The easiest way to get the project running is using **Docker**. This handles all dependencies, Python environment, and database setups for you.
