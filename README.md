@@ -20,6 +20,22 @@ A simple job board platform built with Django, allowing companies to post jobs a
 - **Email Integration:** Gmail SMTP
 - **Version Control:** Git + GitHub
 - **IDE Config:** VS Code
+- **Containerization:** Docker & Docker Compose
+
+
+## 🐳 Running with Docker
+The easiest way to get the project running is using Docker. This handles all dependencies and environment setups for you. 
+
+1. Build and Start
+docker-compose up --build
+
+2. Setup Database
+In a new terminal, run the migrations inside the container:
+docker-compose exec web python manage.py migrate
+
+3. Create Admin (Optional)
+docker-compose exec web python manage.py createsuperuser
+The site will be live at: http://127.0.0.1:8000
 
 
 ## 🖥️ Getting Started
@@ -55,6 +71,30 @@ Job-Board/
 ├── static/          # CSS/JS/Images
 ├── templates/       # HTML templates
 │
+├── Dockerfile       # Docker build instructions
+├── docker-compose.yml # Container orchestration
 ├── db.sqlite3       # Default database
 ├── manage.py        # Django project manager
 └── .gitignore       # Ignored files for Git
+
+
+
+
+## 🐳 Running with Docker
+The easiest way to get the project running is using Docker. This handles all dependencies and environment setups for you.
+
+1. Build and Start
+Bash
+
+docker-compose up --build
+2. Setup Database
+In a new terminal, run the migrations inside the container:
+
+Bash
+
+docker-compose exec web python manage.py migrate
+3. Create Admin (Optional)
+Bash
+
+docker-compose exec web python manage.py createsuperuser
+The site will be live at: http://127.0.0.1:8000
