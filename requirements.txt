@@ -6,8 +6,10 @@ django-filter==2.3.0
 djangorestframework==3.16.1
 Markdown==3.10
 Pillow==7.1.2
+psycopg2-binary==2.9.11
 pytz==2020.1
 setuptools==80.9.0
 soupsieve==2.0.1
 sqlparse==0.3.1
+typing_extensions==4.15.0
 wheel==0.45.1
