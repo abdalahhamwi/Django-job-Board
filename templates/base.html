@@ -57,9 +57,14 @@
                     <nav>
                       <ul id="navigation">
                         <li><a href="/">home</a></li>
+                      
                         <li>
-                          <a href="{% url 'jobs:job_list' %}">Browse Job</a>
+                          <a href="#">job<i class="ti-angle-down"></i></a>
+                          <ul class="submenu">
+                            <li><a href="job_details.html">job details </a></li>
+                          </ul>
                         </li>
+
                         <li>
                           <a href="{% url 'contact:contact' %}">Contact</a>
                         </li>
