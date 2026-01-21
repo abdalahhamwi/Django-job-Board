@@ -7,8 +7,7 @@ Job :
     - Vacancy
     - salary
     - category
-    - experience 
-    -  company_name
+    - experience
     
 
     - apply job 
