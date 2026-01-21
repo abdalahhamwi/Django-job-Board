@@ -8,6 +8,7 @@ Job :
     - salary
     - category
     - experience 
+    -  company_name
     
 
     - apply job 
