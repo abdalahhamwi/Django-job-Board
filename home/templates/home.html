@@ -10,11 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
+     <link rel="shortcut icon" type="image/x-icon" href="{% static '../static/img/favicon.png' %}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
-   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" />
     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
@@ -25,7 +25,6 @@
     <link rel="stylesheet" href="{% static 'css/gijgo.css' %}" />
     <link rel="stylesheet" href="{% static 'css/animate.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/slicknav.css' %}" />
-
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
   </head>
@@ -42,7 +41,7 @@
                 <div class="col-xl-3 col-lg-2">
                   <div class="logo">
                     <a href="index.html">
-                      <img src="img/logo.png" alt="" />
+                      <img src="{% static '../static/img/logo.png' %}" alt="" />
                     </a>
                   </div>
                 </div>
@@ -50,21 +49,21 @@
                   <div class="main-menu d-none d-lg-block">
                     <nav>
                       <ul id="navigation">
-                        <li><a href="index.html">home</a></li>
+                        <li><a href="{% url 'home' %}">home</a></li>
                         <li>
-                          <a href="#">job<i class="ti-angle-down"></i></a>
+                          <a href="#"> Jobs <i class="ti-angle-down"></i></a>
                           <ul class="submenu">
-                            <li><a href="job_details.html">job details </a></li>
+                            <li><a href="{% url 'job_detail' %}">job details </a></li>
                           </ul>
                         </li>
                         <li>
                           <a href="#">blog <i class="ti-angle-down"></i></a>
                           <ul class="submenu">
-                            <li><a href="blog.html">blog</a></li>
-                            <li><a href="single-blog.html">single-blog</a></li>
+                            <li><a href="{% url 'blog' %}">blog</a></li>
+                            <li><a href="{% url 'single_blog' %}">single-blog</a></li>
                           </ul>
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
                       </ul>
                     </nav>
                   </div>
@@ -136,7 +135,7 @@
         data-wow-duration="1s"
         data-wow-delay=".2s"
       >
-        <img src="img/banner/illustration.png" alt="" />
+        <img src="{% static '../static/img/banner/illustration.png' %}" alt="" />
       </div>
     </div>
     <!-- slider_area_end -->
@@ -281,7 +280,7 @@
               <div class="single_jobs white-bg d-flex justify-content-between">
                 <div class="jobs_left d-flex align-items-center">
                   <div class="thumb">
-                    <img src="img/svg_icon/1.svg" alt="" />
+                    <img src="{% static '../static/img/svg_icon/1.svg' %}" alt="" />
                   </div>
                   <div class="jobs_conetent">
                     <a href="job_details.html"><h4>Software Engineer</h4></a>
@@ -312,7 +311,7 @@
               <div class="single_jobs white-bg d-flex justify-content-between">
                 <div class="jobs_left d-flex align-items-center">
                   <div class="thumb">
-                    <img src="img/svg_icon/2.svg" alt="" />
+                    <img src="{% static '../static/img/svg_icon/2.svg' %}" alt="" />
                   </div>
                   <div class="jobs_conetent">
                     <a href="job_details.html"><h4>Digital Marketer</h4></a>
@@ -343,7 +342,7 @@
               <div class="single_jobs white-bg d-flex justify-content-between">
                 <div class="jobs_left d-flex align-items-center">
                   <div class="thumb">
-                    <img src="img/svg_icon/3.svg" alt="" />
+                    <img src="{% static '../static/img/svg_icon/3.svg' %}" alt="" />
                   </div>
                   <div class="jobs_conetent">
                     <a href="job_details.html"><h4>Wordpress Developer</h4></a>
@@ -374,7 +373,7 @@
               <div class="single_jobs white-bg d-flex justify-content-between">
                 <div class="jobs_left d-flex align-items-center">
                   <div class="thumb">
-                    <img src="img/svg_icon/4.svg" alt="" />
+                    <img src="{% static '../static/img/svg_icon/4.svg' %}" alt="" />
                   </div>
                   <div class="jobs_conetent">
                     <a href="job_details.html"><h4>Visual Designer</h4></a>
@@ -405,7 +404,7 @@
               <div class="single_jobs white-bg d-flex justify-content-between">
                 <div class="jobs_left d-flex align-items-center">
                   <div class="thumb">
-                    <img src="img/svg_icon/5.svg" alt="" />
+                    <img src="{% static '../static/img/svg_icon/5.svg' %}" alt="" />
                   </div>
                   <div class="jobs_conetent">
                     <a href="job_details.html"><h4>Frontend Developer</h4></a>
@@ -436,7 +435,7 @@
               <div class="single_jobs white-bg d-flex justify-content-between">
                 <div class="jobs_left d-flex align-items-center">
                   <div class="thumb">
-                    <img src="img/svg_icon/1.svg" alt="" />
+                    <img src="{% static '../static/img/svg_icon/1.svg' %}" alt="" />
                   </div>
                   <div class="jobs_conetent">
                     <a href="job_details.html"><h4>Creative Designer</h4></a>
@@ -484,14 +483,14 @@
             <div class="candidate_active owl-carousel">
               <div class="single_candidates text-center">
                 <div class="thumb">
-                  <img src="img/candiateds/1.png" alt="" />
+                  <img src="{% static '../static/img/candiateds/1.png' %}" alt="" />
                 </div>
                 <a href="#"><h4>Markary Jondon</h4></a>
                 <p>Front-End</p>
               </div>
               <div class="single_candidates text-center">
                 <div class="thumb">
-                  <img src="img/candiateds/2.png" alt="" />
+                  <img src="{% static '../static/img/candiateds/2.png' %}" alt="" />
                 </div>
                 <a href="#"><h4>Adrian Blackwell</h4></a>
                 <p>Back-End</p>
@@ -577,7 +576,7 @@
           <div class="col-lg-4 col-xl-3 col-md-6">
             <div class="single_company">
               <div class="thumb">
-                <img src="img/svg_icon/5.svg" alt="" />
+                <img src="{% static '../static/img/svg_icon/5.svg' %}" alt="" />
               </div>
               <a href="jobs.html"><h3>Snack Studio</h3></a>
               <p><span>2</span> Available position</p>
@@ -586,7 +585,7 @@
           <div class="col-lg-4 col-xl-3 col-md-6">
             <div class="single_company">
               <div class="thumb">
-                <img src="img/svg_icon/4.svg" alt="" />
+                <img src="{% static '../static/img/svg_icon/4.svg' %}" alt="" />
               </div>
               <a href="jobs.html"><h3>Snack Studio</h3></a>
               <p><span>7</span> Available position</p>
@@ -595,7 +594,7 @@
           <div class="col-lg-4 col-xl-3 col-md-6">
             <div class="single_company">
               <div class="thumb">
-                <img src="img/svg_icon/3.svg" alt="" />
+                <img src="{% static '../static/img/svg_icon/3.svg' %}" alt="" />
               </div>
               <a href="jobs.html"><h3>Snack Studio</h3></a>
               <p><span>4</span> Available position</p>
@@ -604,7 +603,7 @@
           <div class="col-lg-4 col-xl-3 col-md-6">
             <div class="single_company">
               <div class="thumb">
-                <img src="img/svg_icon/1.svg" alt="" />
+                <img src="{% static '../static/img/svg_icon/1.svg' %}" alt="" />
               </div>
               <a href="jobs.html"><h3>Snack Studio</h3></a>
               <p><span>1</span> Available position</p>
@@ -653,7 +652,7 @@
                   <div class="col-lg-11">
                     <div class="single_testmonial d-flex align-items-center">
                       <div class="thumb">
-                        <img src="img/candiateds/10.png" alt="" />
+                        <img src="{% static '../static/img/candiateds/10.png' %'}" alt="" />
                         <div class="quote_icon">
                           <i class="Flaticon flaticon-quote"></i>
                         </div>
@@ -678,7 +677,7 @@
                   <div class="col-lg-11">
                     <div class="single_testmonial d-flex align-items-center">
                       <div class="thumb">
-                        <img src="img/candiateds/7.png" alt="" />
+                        <img src="{% static '../static/img/candiateds/7.png' %}" alt="" />
                         <div class="quote_icon">
                           <i class="Flaticon flaticon-quote"></i>
                         </div>
@@ -708,7 +707,7 @@
                   <div class="col-lg-11">
                     <div class="single_testmonial d-flex align-items-center">
                       <div class="thumb">
-                        <img src="img/candiateds/6.png" alt="" />
+                        <img src="{% static '../static/img/candiateds/6.png' %}" alt="" />
                         <div class="quote_icon">
                           <i class="Flaticon flaticon-quote"></i>
                         </div>
@@ -864,7 +863,7 @@
 
     <!-- link that opens popup -->
     <!-- JS here -->
-   <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
     <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
@@ -881,7 +880,7 @@
     <script src="{% static 'js/jquery.slicknav.min.js' %}"></script>
     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
     <script src="{% static 'js/plugins.js' %}"></script>
-    <!-- <script src="{% static 'js/gijgo.min.js' %}"></script> -->
+    <script src="{% static 'js/gijgo.min.js' %}"></script> 
     <script src="{% static 'js/range.js' %}"></script>
 
     <!--contact js-->
@@ -890,8 +889,7 @@
     <script src="{% static 'js/jquery.form.js' %}"></script>
     <script src="{% static 'js/jquery.validate.min.js' %}"></script>
     <script src="{% static 'js/mail-script.js' %}"></script>
-
-    <script src="{% static 'js/main.js"></script>
+    <script src="{% static 'js/main.js'}"></script>
     
   </body>
 </html>
