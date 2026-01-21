@@ -53,7 +53,7 @@
                         <li>
                           <a href="#"> Jobs <i class="ti-angle-down"></i></a>
                           <ul class="submenu">
-                            <li><a href="{% url 'job_detail' %}">job details </a></li>
+                            <li><a href="{% url 'jobs' %}">job Available </a></li>
                           </ul>
                         </li>
                         <li>
@@ -180,13 +180,13 @@
             <div class="popular_search d-flex align-items-center">
               <span>Popular Search:</span>
               <ul>
-                <li><a href="#">Design & Creative</a></li>
-                <li><a href="#">Marketing</a></li>
-                <li><a href="#">Administration</a></li>
-                <li><a href="#">Teaching & Education</a></li>
-                <li><a href="#">Engineering</a></li>
-                <li><a href="#">Software & Web</a></li>
-                <li><a href="#">Telemarketing</a></li>
+                <li><a style="color: #0A8CFF;">Design & Creative</a></li>
+                <li><a style="color: #0A8CFF;">Marketing</a></li>
+                <li><a style="color: #0A8CFF;">Administration</a></li>
+                <li><a style="color: #0A8CFF;">Teaching & Education</a></li>
+                <li><a style="color: #0A8CFF;">Engineering</a></li>
+                <li><a style="color: #0A8CFF;">Software & Web</a></li>
+                <li><a style="color: #0A8CFF;">Telemarketing</a></li>
               </ul>
             </div>
           </div>
@@ -208,49 +208,49 @@
         <div class="row">
           <div class="col-lg-4 col-xl-3 col-md-6">
             <div class="single_catagory">
-              <a href="jobs.html"><h4>Design & Creative</h4></a>
+              <a href="{% url 'job_detail' %}"><h4>Design & Creative</h4></a>
               <p><span>100</span> Available position</p>
             </div>
           </div>
           <div class="col-lg-4 col-xl-3 col-md-6">
             <div class="single_catagory">
-              <a href="jobs.html"><h4>Marketing</h4></a>
+              <a href="{% url 'job_detail' %}"><h4>Marketing</h4></a>
               <p><span>20</span> Available position</p>
             </div>
           </div>
           <div class="col-lg-4 col-xl-3 col-md-6">
             <div class="single_catagory">
-              <a href="jobs.html"><h4>Telemarketing</h4></a>
+              <a href="{% url 'job_detail' %}"><h4>Telemarketing</h4></a>
               <p><span>5</span> Available position</p>
             </div>
           </div>
           <div class="col-lg-4 col-xl-3 col-md-6">
             <div class="single_catagory">
-              <a href="jobs.html"><h4>Software & Web</h4></a>
+              <a href="{% url 'job_detail' %}"><h4>Software & Web</h4></a>
               <p><span>300</span> Available position</p>
             </div>
           </div>
           <div class="col-lg-4 col-xl-3 col-md-6">
             <div class="single_catagory">
-              <a href="jobs.html"><h4>Administration</h4></a>
+              <a href="{% url 'job_detail' %}"><h4>Administration</h4></a>
               <p><span>10</span> Available position</p>
             </div>
           </div>
           <div class="col-lg-4 col-xl-3 col-md-6">
             <div class="single_catagory">
-              <a href="jobs.html"><h4>Teaching & Education</h4></a>
+              <a href="{% url 'job_detail' %}"><h4>Teaching & Education</h4></a>
               <p><span>146</span> Available position</p>
             </div>
           </div>
           <div class="col-lg-4 col-xl-3 col-md-6">
             <div class="single_catagory">
-              <a href="jobs.html"><h4>Engineering</h4></a>
+              <a href="{% url 'job_detail' %}"><h4>Engineering</h4></a>
               <p><span>250</span> Available position</p>
             </div>
           </div>
           <div class="col-lg-4 col-xl-3 col-md-6">
             <div class="single_catagory">
-              <a href="jobs.html"><h4>Garments / Textile</h4></a>
+              <a href="{% url 'job_detail' %}"><h4>Garments / Textile</h4></a>
               <p><span>35</span> Available position</p>
             </div>
           </div>
@@ -270,7 +270,7 @@
           </div>
           <div class="col-lg-6">
             <div class="brouse_job text-right">
-              <a href="jobs.html" class="boxed-btn4">Browse More Job</a>
+              <a href="{% url 'jobs' %}" class="boxed-btn4">Browse More Job</a>
             </div>
           </div>
         </div>

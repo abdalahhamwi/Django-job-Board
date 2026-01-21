@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 
 
-def job_views(request):
+def jobs_views(request):
     return render(request, "jobs.html")
 
 
