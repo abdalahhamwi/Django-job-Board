@@ -5,7 +5,9 @@ from .models import Popolar_Categories
 
 
 def home_view(request):
-    return render(request, "home.html")
+    category = Popolar_Categories.objects.all()
+
+    return render(request, "home.html", {"category": category})
 
 
 def post_job(request):
