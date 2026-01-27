@@ -4,6 +4,7 @@ from django.shortcuts import render
 
 
 def jobs_views(request):
+    
     return render(request, "jobs.html")
 
 
