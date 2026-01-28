@@ -202,69 +202,79 @@
     </div>
     <!-- popular_catagory_area_end  -->
       
-    <!-- job_listing_area_start  -->
-    <div class="job_listing_area">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="section_title">
-              <h3>Job Listing</h3>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="brouse_job text-right">
-              <a href="{% url 'jobs' %}" class="boxed-btn4">Browse More Job</a>
-            </div>
-          </div>
-          
-          {% for z in job_detail %}
+   <!-- job_listing_area_start  -->
+<div class="job_listing_area">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="section_title">
+          <h3>Job Listing</h3>
         </div>
-        <div class="job_lists">
-          <div class="row">
-            <div class="col-lg-12 col-md-12">              
-              <div class="single_jobs white-bg d-flex justify-content-between">
-                <div class="jobs_left d-flex align-items-center">
-
-                  {% if z.photo_company %}
-                  <div class="thumb">
-                    <img src="{{ z.photo_company.url }}" width = 52 height = 52 alt="" />
-                  </div>
-                  {% else %} 
-                   <div class="thumb">
-                     <img src="{% static '../static/img/svg_icon/2.svg' %}" alt="">
-                  </div>
-                  {% endif %}
-                  <div class="jobs_conetent">
-                    <a href="{% url 'job_detail' %}"> <h4>{{z.job_title}}</h4></a>
-                    <div class="links_locat d-flex align-items-center">
-                      <div class="location">
-                        <p><i class="fa fa-map-marker"></i> {{z.location}}</p>
-                      </div>
-                      <div class="location">
-                        <p><i class="fa fa-clock-o"></i> {{z.job_type}}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="jobs_right">
-                  <div class="apply_now">
-                    <a href="{% url 'job_detail' %}" class="boxed-btn3">Apply Now</a>
-                  </div>
-                  <div class="date">
-                    <p> Date line: {{z.published_at}}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-              </div>
-              {% endfor %} 
-            </div>
-          </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="brouse_job text-right">
+          <a href="{% url 'jobs' %}" class="boxed-btn4">Browse More Job</a>
         </div>
       </div>
     </div>
-    
-    <!-- job_listing_area_end  -->
+
+    <div class="job_lists">
+      <div class="row">
+
+        {% for z in job_detail %}
+        <div class="col-lg-12 col-md-12">
+          <div class="single_jobs white-bg d-flex justify-content-between">
+            <div class="jobs_left d-flex align-items-center">
+
+              {% if z.photo_company %}
+              <div class="thumb">
+                <img src="{{ z.photo_company.url }}" width="52" height="52" alt="">
+              </div>
+              {% else %}
+              <div class="thumb">
+                <img src="{% static 'img/svg_icon/2.svg' %}" alt="">
+              </div>
+              {% endif %}
+
+              <div class="jobs_conetent">
+                <a href="{% url 'job_detail' %}">
+
+                  
+
+                  <h4>{{ z.job_title }}</h4>
+                </a>
+                <div class="links_locat d-flex align-items-center">
+                  <div class="location">
+                    <p><i class="fa fa-map-marker"></i> {{ z.location }}</p>
+                  </div>
+                  <div class="location">
+                    <p><i class="fa fa-clock-o"></i> {{ z.job_type }}</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="jobs_right">
+              <div class="apply_now">
+                <a href="{% url 'job_detail' %}" class="boxed-btn3">Apply Now</a>
+              </div>
+              <div class="date">
+                <p>Date line: {{ z.published_at }}</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- job_listing_area_end  -->
+
     <div class="top_companies_area">
       <div class="container">
         <div class="row align-items-center mb-40">
