@@ -17,7 +17,7 @@ job board platform built with Django, allowing companies to post jobs and users 
 - **Backend:** Django (Python)
 - **Frontend:** HTML, CSS, JavaScript, SCSS
 - **Database:** PostgreSQL
-- **Email Integration:** Gmail SMTP
+- **Email Integration:** Send Grid
 - **Version Control:** Git + GitHub
 - **IDE Config:** VS Code
 - **Containerization:** Docker & Docker Compose
