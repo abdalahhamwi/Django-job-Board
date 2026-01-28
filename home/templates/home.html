@@ -138,8 +138,7 @@
       </div>
     </div>
     
-  <!-- popular_catagory_area_start  -->
-   
+   <!-- popular_catagory_area_start  -->
     <div class="popular_catagory_area">
       <div class="container">
         <div class="row">
@@ -149,16 +148,54 @@
             </div>
           </div>
         </div>
-          {% for x in category %}
         <div class="row">
           <div class="col-lg-4 col-xl-3 col-md-6">
             <div class="single_catagory">
-              <a href="jobs.html"><h4>{{x.name}}</h4></a>
-              <p><span>{{x.available_position}}</span> Available position</p>
+              <a href="{% url 'jobs' %}" ><h4>Design & Creative</h4></a>
+              <p><span>100</span> Available position</p>
             </div>
           </div>
+          <div class="col-lg-4 col-xl-3 col-md-6">
+            <div class="single_catagory">
+              <a href="{% url 'jobs' %}" ><h4>Marketing</h4></a>
+              <p><span>20</span> Available position</p>
             </div>
-            {% endfor %}
+          </div>
+          <div class="col-lg-4 col-xl-3 col-md-6">
+            <div class="single_catagory">
+              <a href="{% url 'jobs' %}" ><h4>Telemarketing</h4></a>
+              <p><span>5</span> Available position</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-xl-3 col-md-6">
+            <div class="single_catagory">
+              <a href="{% url 'jobs' %}" ><h4>Software & Web</h4></a>
+              <p><span>300</span> Available position</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-xl-3 col-md-6">
+            <div class="single_catagory">
+              <a href="{% url 'jobs' %}" ><h4>Administration</h4></a>
+              <p><span>10</span> Available position</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-xl-3 col-md-6">
+            <div class="single_catagory">
+              <a href="{% url 'jobs' %}" ><h4>Teaching & Education</h4></a>
+              <p><span>146</span> Available position</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-xl-3 col-md-6">
+            <div class="single_catagory">
+              <a href="{% url 'jobs' %}" ><h4>Engineering</h4></a>
+              <p><span>250</span> Available position</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-xl-3 col-md-6">
+            <div class="single_catagory">
+              <a href="{% url 'jobs' %}" ><h4>Garments / Textile</h4></a>
+              <p><span>35</span> Available position</p>
+            </div>
           </div>
         </div>
       </div>
@@ -180,7 +217,7 @@
             </div>
           </div>
           
-          {% for z in Jobs %}
+          {% for z in job_detail %}
         </div>
         <div class="job_lists">
           <div class="row">
@@ -194,7 +231,7 @@
                   </div>
                   {% else %} 
                    <div class="thumb">
-                    <img src="{% static '../static/img/svg_icon/1.svg' %}" alt="" />
+                     <img src="{% static '../static/img/svg_icon/2.svg' %}" alt="">
                   </div>
                   {% endif %}
                   <div class="jobs_conetent">

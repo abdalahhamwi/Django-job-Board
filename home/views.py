@@ -1,16 +1,18 @@
 from django.shortcuts import render, redirect
-from .models import Popolar_Categories, Job_Listing
+from job.models import Job_Detail
+
 
 # Create your views here.
 
 
 def home_view(request):
-    category = Popolar_Categories.objects.all()
-    Jobs = Job_Listing.objects.all()
-
-    return render(request, "home.html", {"category": category, "Jobs": Jobs})
+   job_detail = Job_Detail.objects.all()
+   
+   
+   return render(request, "home.html", { 'job_detail': job_detail} )
 
 
 def post_job(request):
 
     return render(request, "post_job.html")
+    

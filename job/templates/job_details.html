@@ -96,7 +96,9 @@
         <div class="row">
           <div class="col-xl-12">
             <div class="bradcam_text">
-              <h3>Software Engineer</h3>
+              {% comment %} {% for y in job_detail %} {% endcomment %}
+              <h3> {{y.job_title}} </h3>
+              {% comment %} {% endfor %} {% endcomment %}
             </div>
           </div>
         </div>
@@ -105,6 +107,8 @@
     <!--/ bradcam_area  -->
 
     <div class="job_details_area">
+
+      {% comment %} {% for y in job_detail %} {% endcomment %}
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
@@ -112,16 +116,16 @@
               <div class="single_jobs white-bg d-flex justify-content-between">
                 <div class="jobs_left d-flex align-items-center">
                   <div class="thumb">
-                    <img src="{% static '../static/img/svg_icon/1.svg' %}" alt="" />
+                    <img src="{% static '../static/img/svg_icon/2.svg' %}" alt="">
                   </div>
                   <div class="jobs_conetent">
-                    <a href="#"><h4>Software Engineer</h4></a>
+                    {% comment %} <a href="#"><h4>{{y.job_title}}</h4></a> {% endcomment %}
                     <div class="links_locat d-flex align-items-center">
                       <div class="location">
-                        <p><i class="fa fa-map-marker"></i> California, USA</p>
+                        {% comment %} <p><i class="fa fa-map-marker"></i> {{y.location}}</p> {% endcomment %}
                       </div>
                       <div class="location">
-                        <p><i class="fa fa-clock-o"></i> Part-time</p>
+                        {% comment %} <p><i class="fa fa-clock-o"></i> {{y.job_type}}</p> {% endcomment %}
                       </div>
                     </div>
                   </div>
@@ -139,67 +143,28 @@
               <div class="single_wrap">
                 <h4>Job description</h4>
                 <p>
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majority have suffered alteration in some
-                  form, by injected humour, or randomised words which don't look
-                  even slightly believable. If you are going to use a passage of
-                  Lorem Ipsum, you need to be sure there isn't anything
-                  embarrassing.
-                </p>
-                <p>
-                  Variations of passages of lorem Ipsum available, but the
-                  majority have suffered alteration in some form, by injected
-                  humour, or randomised words which don't look even slightly
-                  believable. If you are going to use a passage of Lorem Ipsum,
-                  you need to be sure there isn't anything embarrassing.
+                  {% comment %} {{y.Job_description}} {% endcomment %}
                 </p>
               </div>
               <div class="single_wrap">
                 <h4>Responsibility</h4>
-                <ul>
-                  <li>
-                    The applicants should have experience in the following
-                    areas.
-                  </li>
-                  <li>Have sound knowledge of commercial activities.</li>
-                  <li>
-                    Leadership, analytical, and problem-solving abilities.
-                  </li>
-                  <li>
-                    Should have vast knowledge in IAS/ IFRS, Company Act, Income
-                    Tax, VAT.
-                  </li>
-                </ul>
+                   {% comment %} <p>{{y.Responsibility}} {% endcomment %}
+                  </p>
               </div>
               <div class="single_wrap">
                 <h4>Qualifications</h4>
-                <ul>
-                  <li>
-                    The applicants should have experience in the following
-                    areas.
-                  </li>
-                  <li>Have sound knowledge of commercial activities.</li>
-                  <li>
-                    Leadership, analytical, and problem-solving abilities.
-                  </li>
-                  <li>
-                    Should have vast knowledge in IAS/ IFRS, Company Act, Income
-                    Tax, VAT.
-                  </li>
-                </ul>
+                {% comment %} <p>{{y.Qualifications}} {% endcomment %}
+                </p>
               </div>
               <div class="single_wrap">
                 <h4>Benefits</h4>
                 <p>
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majority have suffered alteration in some
-                  form, by injected humour, or randomised words which don't look
-                  even slightly believable. If you are going to use a passage of
-                  Lorem Ipsum, you need to be sure there isn't anything
-                  embarrassing.
+                  {% comment %} {{y.Benefits}} {% endcomment %}
                 </p>
               </div>
             </div>
+              {% comment %} {% endfor %} {% endcomment %}
+          
             <div class="apply_job_form white-bg">
               <h4>Apply for the job</h4>
               <form action="#">
@@ -266,13 +231,16 @@
               <div class="summery_header">
                 <h3>Job Summery</h3>
               </div>
+
+               {% comment %} {% for y in job_detail %} {% endcomment %}
               <div class="job_content">
                 <ul>
-                  <li>Published on: <span>12 Nov, 2019</span></li>
-                  <li>Vacancy: <span>2 Position</span></li>
-                  <li>Salary: <span>50k - 120k/y</span></li>
-                  <li>Location: <span>California, USA</span></li>
-                  <li>Job Nature: <span> Full-time</span></li>
+                  <li>Published on: <span>{{y.published_at}}</span></li>
+                  <li>Vacancy: <span>{{y.Vacancy}} Position</span></li>
+                  <li>Salary: <span>{{y.salary}}$ Months</span></li>
+                  <li>Location: <span>{{y.location}}</span></li>
+                  <li>Job Nature: <span> {{y.job_type}}</span></li>
+                  {% comment %} {% endfor %} {% endcomment %}
                 </ul>
               </div>
             </div>
