@@ -136,38 +136,9 @@
 
               <form action="#" method= POST>
                 {% csrf_token %} 
-                {{add_post}}
                 <div class="row">
-                  <div class="col-md-6">
-                    <div class="input_field">
-                      <input type="text" placeholder="Title" name = title />
-                      <input type="text" placeholder="Job type" name = job_type />
-                      <input type="number" placeholder="Vacancy" name = vacancy />
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="input_field">
-                      <input type="text" placeholder="Location" name = Location />
-                      <input type="number" placeholder="Salary" name = Salary />
-                      <input type="number" placeholder="Experience" name = experience />
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="input_field">
-                     <input type="text" placeholder="Category" name = category />
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="input_field">
-                      <textarea
-                        name="#"
-                        id=""
-                        cols="30"
-                        rows="10"
-                        placeholder="Description"
-                      ></textarea>
-                    </div>
-                  </div>
+                  {{add_post}}
+
                   <div class="col-md-12">
                     <div class="submit_btn">
                       <button class="boxed-btn3 w-100" value="save">
