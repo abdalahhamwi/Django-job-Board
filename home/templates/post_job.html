@@ -1,27 +1,5 @@
 {% load static %}
-
-
-{% comment %} <form method="post">
-    {% csrf_token %}
-    <div>
-        <label for="title">Job Title:</label>
-        <input type="text" id="title" name="title" required>
-    </div>
-    <div>
-        <label for="company">Company Name:</label>
-        <input type="text" id="company" name="company" required>
-    </div>
-    <div>
-        <label for="location">Location:</label>
-        <input type="text" id="location" name="location" required>
-    </div>
-    <div>
-        <label for="description">Job Description:</label>
-        <textarea id="description" name="description" required></textarea>
-    </div>
-    <button type="submit">Submit Job</button>
-
-</form> {% endcomment %}
+{% load bootstrap4 %}
 
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -119,7 +97,7 @@
         <div class="row">
           <div class="col-xl-12">
             <div class="bradcam_text">
-              <h3>Software Engineer</h3>
+              <h3>Add New Job</h3>
             </div>
           </div>
         </div>
@@ -132,20 +110,19 @@
         <div class="row">
           <div>
             <div class="apply_job_form white-bg">
-              <h4>Post A Job</h4>
+              <h4>Post New Job</h4>
 
-              <form action="#" method= POST>
-                {% csrf_token %} 
+              <form action="#" method= "POST"> 
                 <div class="row">
-                  {{add_post}}
-
-                  <div class="col-md-12">
-                    <div class="submit_btn">
-                      <button class="boxed-btn3 w-100" value="save">
-                        Apply Now
+                 {% csrf_token %}
+                 {% bootstrap_form add_post %}
+                 {% buttons %}
+                 <div class="submit_btn">
+                      <button class="boxed-btn3 w-100" type="submit">
+                        Post Now
                       </button>
                     </div>
-                  </div>
+               {% endbuttons %}
                 </div>
               </form>
               
