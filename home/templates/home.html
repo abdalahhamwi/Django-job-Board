@@ -225,7 +225,6 @@
         <div class="col-lg-12 col-md-12">
           <div class="single_jobs white-bg d-flex justify-content-between">
             <div class="jobs_left d-flex align-items-center">
-
               {% if z.photo_company %}
               <div class="thumb">
                 <img src="{{ z.photo_company.url }}" width="52" height="52" alt="">
@@ -235,12 +234,8 @@
                 <img src="{% static 'img/svg_icon/2.svg' %}" alt="">
               </div>
               {% endif %}
-
               <div class="jobs_conetent">
                 <a href="{% url 'job_detail' %}">
-
-                  
-
                   <h4>{{ z.job_title }}</h4>
                 </a>
                 <div class="links_locat d-flex align-items-center">
@@ -252,9 +247,7 @@
                   </div>
                 </div>
               </div>
-
             </div>
-
             <div class="jobs_right">
               <div class="apply_now">
                 <a href="{% url 'job_detail' %}" class="boxed-btn3">Apply Now</a>
@@ -263,16 +256,14 @@
                 <p>Date line: {{ z.published_at }}</p>
               </div>
             </div>
-
           </div>
         </div>
         {% endfor %}
-
       </div>
     </div>
-
   </div>
 </div>
+
 <!-- job_listing_area_end  -->
 
     <div class="top_companies_area">
@@ -345,7 +336,7 @@
             <div class="searching_text">
               <h3>Looking for a Expert?</h3>
               <p>We provide online instant cash loans with quick approval</p>
-              <a href="#" class="boxed-btn3">Post a Job</a>
+              <a href="{% url 'post_job' %}" class="boxed-btn3">Post a Job</a>
             </div>
           </div>
         </div>

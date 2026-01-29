@@ -45,7 +45,7 @@
                         <div class="row align-items-center">
                             <div class="col-xl-3 col-lg-2">
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="{% url 'home' %}">
                                         <img src="{% static '../static/img/logo.png' %}" alt="" />
                                     </a>
                                 </div>
@@ -76,7 +76,7 @@
                                         <a href="#">Log in</a>
                                     </div>
                                     <div class="d-none d-lg-block">
-                                        <a class="boxed-btn3" href="#">Post a Job</a>
+                                        <a class="boxed-btn3" href="{% url 'post_job' %}">Post a Job</a>
                                     </div>
                                 </div>
                             </div>
@@ -178,13 +178,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="range_wrap">
-                            <label for="amount">Price range:</label>
-                            <div id="slider-range"></div>
-                            <p>
-                                <input type="text" id="amount" readonly style="border:0; color:#7A838B; font-size: 14px; font-weight:400;">
-                            </p>
-                        </div>
+                        <br>
                         <div class="reset_btn">
                             <button  class="boxed-btn3 w-100" type="submit">Reset</button>
                         </div>

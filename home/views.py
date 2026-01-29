@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from job.models import Job_Detail
+from .forms import PostJobForm
 
 
 # Create your views here.
@@ -13,6 +14,12 @@ def home_view(request):
 
 
 def post_job(request):
+   
+   if request.method == "POST":
+      add_post = PostJobForm(request.POST)
+      if add_post.is_valid():
+         add_post.save()
+         return redirect('home')
 
-    return render(request, "post_job.html")
+   return render(request, "post_job.html" , {"add_post": PostJobForm()} )
     

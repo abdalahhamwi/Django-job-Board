@@ -64,7 +64,7 @@
               <div class="row align-items-center">
                 <div class="col-xl-3 col-lg-2">
                   <div class="logo">
-                    <a>
+                    <a href="{% url 'home' %}">
                       <img src="{% static '../static/img/logo.png' %}" alt="" />
                     </a>
                   </div>
@@ -98,7 +98,7 @@
                       <a href="#">Log in</a>
                     </div>
                     <div class="d-none d-lg-block">
-                      <a class="boxed-btn3" href="#">Post a Job</a>
+                      <a class="boxed-btn3" href="{% url 'post_job' %}">Post a Job</a>
                     </div>
                   </div>
                 </div>
@@ -130,13 +130,13 @@
     <div class="job_details_area">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8">
+          <div>
             <div class="apply_job_form white-bg">
               <h4>Post A Job</h4>
 
               <form action="#" method= POST>
                 {% csrf_token %} 
-                {{JobForm}}
+                {{add_post}}
                 <div class="row">
                   <div class="col-md-6">
                     <div class="input_field">
@@ -159,7 +159,13 @@
                   </div>
                   <div class="col-md-12">
                     <div class="input_field">
-                      <input type="text" placeholder="Description" name = description />
+                      <textarea
+                        name="#"
+                        id=""
+                        cols="30"
+                        rows="10"
+                        placeholder="Description"
+                      ></textarea>
                     </div>
                   </div>
                   <div class="col-md-12">
