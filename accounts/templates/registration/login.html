@@ -1,6 +1,22 @@
-{% extends "base_generic.html" %}
+{% extends 'base.html' %}
+{% block body %}
+{% load bootstrap4 %}
 
-{% block content %}
+<div class="col-lg-8">
+            <form method= "POST" >
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons %}
+            <button
+                  type="submit"
+                  class="button button-contactForm btn_4 boxed-btn"
+                >
+                  Send Message
+                </button>
+            {% endbuttons %}
+            </div>
+            </form>
+
 
   {% if form.errors %}
     <p>Your username and password didn't match. Please try again.</p>

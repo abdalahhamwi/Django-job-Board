@@ -9,7 +9,6 @@ job board platform built with Django, allowing companies to post jobs and users 
 - Blog section for articles or news related to the job market.
 - Contact page with Gmail integration for sending messages.
 - Media upload support for images and files.
-- Frontend built with HTML, CSS, Bootstrap 4, JavaScript, and SCSS.
 
 ---
 
