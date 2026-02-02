@@ -1,4 +1,5 @@
 {% load static %}
+{% load bootstrap4 %}
 
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -96,9 +97,8 @@
         <div class="row">
           <div class="col-xl-12">
             <div class="bradcam_text">
-              {% comment %} {% for y in job_detail %} {% endcomment %}
+  
               <h3> {{job_detail.job_title}} </h3>
-              {% comment %} {% endfor %} {% endcomment %}
             </div>
           </div>
         </div>
@@ -107,8 +107,6 @@
     <!--/ bradcam_area  -->
 
     <div class="job_details_area">
-
-      {% comment %} {% for y in job_detail %} {% endcomment %}
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
@@ -119,13 +117,13 @@
                     <img src="{% static '../static/img/svg_icon/2.svg' %}" alt="">
                   </div>
                   <div class="jobs_conetent">
-                    {% comment %} <a href="#"><h4>{{y.job_title}}</h4></a> {% endcomment %}
+                    <a href="#"><h4>{{job_detail.job_title}}</h4></a>
                     <div class="links_locat d-flex align-items-center">
                       <div class="location">
-                        {% comment %} <p><i class="fa fa-map-marker"></i> {{y.location}}</p> {% endcomment %}
+                        <p><i class="fa fa-map-marker"></i> {{job_detail.location}}</p>
                       </div>
                       <div class="location">
-                        {% comment %} <p><i class="fa fa-clock-o"></i> {{y.job_type}}</p> {% endcomment %}
+                        <p><i class="fa fa-clock-o"></i> {{job_detail.job_type}}</p>
                       </div>
                     </div>
                   </div>
@@ -143,88 +141,40 @@
               <div class="single_wrap">
                 <h4>Job description</h4>
                 <p>
-                  {% comment %} {{y.Job_description}} {% endcomment %}
+                  {{job_detail.Job_description}}
                 </p>
               </div>
               <div class="single_wrap">
                 <h4>Responsibility</h4>
-                   {% comment %} <p>{{y.Responsibility}} {% endcomment %}
+                   <p>{{job_detail.Responsibility}}
                   </p>
               </div>
               <div class="single_wrap">
                 <h4>Qualifications</h4>
-                {% comment %} <p>{{y.Qualifications}} {% endcomment %}
+                <p>{{job_detail.Qualifications}}
                 </p>
               </div>
               <div class="single_wrap">
                 <h4>Benefits</h4>
                 <p>
-                  {% comment %} {{y.Benefits}} {% endcomment %}
+                  {{job_detail.Benefits}}
                 </p>
               </div>
             </div>
-              {% comment %} {% endfor %} {% endcomment %}
-          
+            
             <div class="apply_job_form white-bg">
               <h4>Apply for the job</h4>
-              <form action="#">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="input_field">
-                      <input type="text" placeholder="Your name" />
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="input_field">
-                      <input type="text" placeholder="Email" />
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="input_field">
-                      <input type="text" placeholder="Website/Portfolio link" />
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <button type="button" id="inputGroupFileAddon03">
-                          <i class="fa fa-cloud-upload" aria-hidden="true"></i>
-                        </button>
-                      </div>
-                      <div class="custom-file">
-                        <input
-                          type="file"
-                          class="custom-file-input"
-                          id="inputGroupFile03"
-                          aria-describedby="inputGroupFileAddon03"
-                        />
-                        <label class="custom-file-label" for="inputGroupFile03"
-                          >Upload CV</label
-                        >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="input_field">
-                      <textarea
-                        name="#"
-                        id=""
-                        cols="30"
-                        rows="10"
-                        placeholder="Coverletter"
-                      ></textarea>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="submit_btn">
-                      <button class="boxed-btn3 w-100" type="submit">
+              <form method= "POST" >
+              {% csrf_token %}
+              {% bootstrap_form apply_job %}
+              {% buttons %}
+               <button class="boxed-btn3 w-100" type="submit">
                         Apply Now
                       </button>
-                    </div>
-                  </div>
-                </div>
-              </form>
+              {% endbuttons %}
+
             </div>
+            </form>
           </div>
           <div class="col-lg-4">
             <div class="job_sumary">
@@ -232,15 +182,13 @@
                 <h3>Job Summery</h3>
               </div>
 
-               {% comment %} {% for y in job_detail %} {% endcomment %}
               <div class="job_content">
                 <ul>
-                  <li>Published on: <span>{{y.published_at}}</span></li>
-                  <li>Vacancy: <span>{{y.Vacancy}} Position</span></li>
-                  <li>Salary: <span>{{y.salary}}$ Months</span></li>
-                  <li>Location: <span>{{y.location}}</span></li>
-                  <li>Job Nature: <span> {{y.job_type}}</span></li>
-                  {% comment %} {% endfor %} {% endcomment %}
+                  <li>Published on: <span>{{job_detail.published_at}}</span></li>
+                  <li>Vacancy: <span>{{job_detail.Vacancy}} Position</span></li>
+                  <li>Salary: <span>{{job_detail.salary}}$ Months</span></li>
+                  <li>Location: <span>{{job_detail.location}}</span></li>
+                  <li>Job Nature: <span> {{job_detail.job_type}}</span></li>
                 </ul>
               </div>
             </div>
@@ -262,7 +210,7 @@
               >
                 <div class="footer_logo">
                   <a href="#">
-                    <img src="img/logo.png" alt="" />
+                    <img src="{% static '../static/img/logo.png' %}" alt="" />
                   </a>
                 </div>
                 <p>
@@ -273,22 +221,22 @@
                 <div class="socail_links">
                   <ul>
                     <li>
-                      <a href="#">
+                      <a>
                         <i class="ti-facebook"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a>
                         <i class="fa fa-google-plus"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a>
                         <i class="fa fa-twitter"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a>
                         <i class="fa fa-instagram"></i>
                       </a>
                     </li>

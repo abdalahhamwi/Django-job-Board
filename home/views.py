@@ -18,6 +18,8 @@ def post_job(request):
       if add_post.is_valid():
          add_post.save()
          return redirect ("home")
+      else:
+         add_post = PostJobForm()
          
 
    return render(request, "post_job.html" , {"add_post": PostJobForm} )

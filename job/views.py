@@ -1,20 +1,28 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from home.models import Post_Job
-
+from .forms import JobApplicationForm
 
 
 # Create your views here.
 
 
 def jobs_views(request):
+
+    job_detail = Post_Job.objects.all()
+    job_number = Post_Job.objects.count()
     
-   job_detail = Post_Job.objects.all()
-   
-   return render(request, "jobs.html", {"job_detail": job_detail})
+    return render(request, "jobs.html", {"job_detail": job_detail , "job_number":job_number})
 
+def job_detail_views(request, id):
+    
+    if request.method == "POST" :
+        apply_job = JobApplicationForm(request.POST)
+        if apply_job.is_valid():
+            apply_job.save()
+        return redirect('jobs')
+    else:
+        apply_job = JobApplicationForm()
 
-def job_detail_views(request , id):
-   
-   job_detail  = Post_Job.objects.get(id=id)
+    job_detail = Post_Job.objects.get(id=id)
 
-   return render(request, "job_detail.html" , {"job_detail ": job_detail })
+    return render(request, "job_detail.html", {"job_detail": job_detail ,"apply_job": apply_job})

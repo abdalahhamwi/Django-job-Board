@@ -107,25 +107,21 @@
 
     <div class="job_details_area">
       <div class="container">
-        <div class="row">
           <div>
             <div class="apply_job_form white-bg">
               <h4>Post New Job</h4>
-
-              <form action="#" method= "POST"> 
-                <div class="row">
-                 {% csrf_token %}
-                 {% bootstrap_form add_post %}
-                 {% buttons %}
-                 <div class="submit_btn">
-                      <button class="boxed-btn3 w-100" type="submit">
-                        Post Now
+               <div class="apply_job_form white-bg">
+              <h4>Apply for the job</h4>
+              <form method= "POST" >
+              {% csrf_token %}
+              {% bootstrap_form add_post %}
+              {% buttons %}
+               <button class="boxed-btn3 w-100" type="submit">
+                        Post A Job
                       </button>
-                    </div>
-               {% endbuttons %}
-                </div>
-              </form>
-              
+              {% endbuttons %}
+            </div>
+            </form>
             </div>
           </div>
           <div class="col-lg-4">

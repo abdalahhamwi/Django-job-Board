@@ -12,5 +12,7 @@ def contact_view(request):
         if add_contact.is_valid():
             add_contact.save()
             return redirect("home")
+    else:
+        add_contact = ContactForm()
 
     return render(request, "contact.html", {"add_contact": ContactForm})
