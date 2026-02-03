@@ -16,7 +16,7 @@ def jobs_views(request):
 def job_detail_views(request, slug):
     
     if request.method == "POST" :
-        apply_job = JobApplicationForm(request.POST)
+        apply_job = JobApplicationForm(request.POST , request.FILES)
         if apply_job.is_valid():
             apply_job.save()
         return redirect('jobs')
