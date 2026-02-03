@@ -13,7 +13,7 @@ def jobs_views(request):
     
     return render(request, "jobs.html", {"job_detail": job_detail , "job_number":job_number})
 
-def job_detail_views(request, id):
+def job_detail_views(request, slug):
     
     if request.method == "POST" :
         apply_job = JobApplicationForm(request.POST)
@@ -23,6 +23,6 @@ def job_detail_views(request, id):
     else:
         apply_job = JobApplicationForm()
 
-    job_detail = Post_Job.objects.get(id=id)
+    job_detail = Post_Job.objects.get(slug=slug)
 
     return render(request, "job_detail.html", {"job_detail": job_detail ,"apply_job": apply_job})

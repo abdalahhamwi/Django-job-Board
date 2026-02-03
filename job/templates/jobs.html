@@ -208,7 +208,7 @@
                                             <img src="{% static '../static/img/svg_icon/2.svg' %}" alt="">
                                         </div>
                                         <div class="jobs_conetent">
-                                            <a href="{% url 'job_detail' z.id %}" ><h4>{{z.job_title}}</h4></a>
+                                            <a href="{% url 'job_detail' z.slug %}" ><h4>{{z.job_title}}</h4></a>
                                             <div class="links_locat d-flex align-items-center">
                                                 <div class="location">
                                                     <p> <i class="fa fa-map-marker"></i> {{z.location}}</p>
@@ -222,7 +222,7 @@
                                     <div class="jobs_right">
                                         <div class="apply_now">
                                             <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a>
-                                            <a href="{% url 'job_detail' z.id %}" class="boxed-btn3">Apply Now</a>
+                                            <a href="{% url 'job_detail' z.slug %}" class="boxed-btn3">Apply Now</a>
                                         </div>
                                         <div class="date">
                                             <p>Date line: {{z.published_at}}</p>

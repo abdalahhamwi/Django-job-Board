@@ -235,7 +235,7 @@
               </div>
               {% endif %}
               <div class="jobs_conetent">
-                <a href="{% url 'job_detail' z.id %}">
+                <a href="{% url 'job_detail' z.slug %}">
                   <h4>{{ z.job_title }}</h4>
                 </a>
                 <div class="links_locat d-flex align-items-center">
@@ -250,7 +250,7 @@
             </div>
             <div class="jobs_right">
               <div class="apply_now">
-                <a href="{% url 'job_detail' z.id %}" class="boxed-btn3">Apply Now</a>
+                <a href="{% url 'job_detail' z.slug %}" class="boxed-btn3">Apply Now</a>
               </div>
               <div class="date">
                 <p>Date line: {{ z.published_at }}</p>
