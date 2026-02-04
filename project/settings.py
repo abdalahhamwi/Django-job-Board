@@ -149,7 +149,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "abdalah00941@gmail.com" 
-EMAIL_HOST_PASSWORD = "zltf xlbh dlpe xept"
+EMAIL_HOST_USER = "abdalah09941@gmail.com" 
+EMAIL_HOST_PASSWORD = "zltfxlbhdlpexept"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+# celery + redis + docker
+
+CELERY_RESULT_BACKEND = "redis://redis:6379"
+CELERY_BROKER_URL = "redis://redis:6379"

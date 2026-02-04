@@ -8,15 +8,18 @@ job board platform built with Django, allowing companies to post jobs and users 
 - Job listings with details such as title, description, salary, and company.
 - Blog section for articles or news related to the job market.
 - Contact page with Gmail integration for sending messages.
-- Media upload support for images and files.
+- Asynchronous task handling using Celery and Redis
 
----
+- **Email notifications**
+  sent to users when they apply for jobs and for contact/support   messages (may go to spam if not in inbox)
+
+
 
 ## ⚙️ Tech Stack
 - **Backend:** Django (Python) , Django REST Framework , Redis , Celery
 - **Frontend:** HTML, CSS, JavaScript, SCSS ,bootstrap 4
 - **Database:** PostgreSQL
-- **Email Integration:** Send Grid
+- **Email Integration:** Gmail SMTP
 - **Version Control:** Git + GitHub
 - **IDE Config:** VS Code
 - **Containerization:** Docker & Docker Compose
