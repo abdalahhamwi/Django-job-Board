@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from home.models import Post_Job
 from .forms import JobApplicationForm
+from django.contrib import messages
+from django.core.mail import send_mail
+
 
 
 
@@ -23,8 +26,18 @@ def job_detail_views(request, slug):
         apply_job = JobApplicationForm(request.POST, request.FILES)
         if apply_job.is_valid():
             apply_job.save()
-            # call celery task
             
+            user_email = apply_job.cleaned_data["email"]
+            
+            # رسالة للمستخدم
+            send_mail(
+                subject="Thanks for applying!",
+                message="Hello! We received your application and will reply soon.",
+                from_email="abdalah09941@gmail.com",
+                recipient_list=[user_email],
+            )
+            
+            messages.add_message(request, messages.INFO, "Your job application has been submitted.") 
             return redirect("jobs")
 
     else:

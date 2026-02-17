@@ -58,11 +58,7 @@
                           </ul>
                         </li>
                         <li>
-                          <a href="#">blog <i class="ti-angle-down"></i></a>
-                          <ul class="submenu">
-                            <li><a href="{% url 'blog' %}">blog</a></li>
-                            <li><a href="{% url 'single_blog' %}">single-blog</a></li>
-                          </ul>
+                          <a href="{% url 'blog' %}">blog <i></i></a>
                         </li>
                         <li><a href="{% url 'contact' %}">Contact</a></li>
                       </ul>
@@ -103,13 +99,13 @@
       </div>
     </div>
     <!--/ bradcam_area  -->
-    {% if messages %}
-    <ul class="messages">
+   {% if messages %}
     {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-    </ul>
-    {% endif %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+        </div>
+      {% endfor %}
+      {% endif %}
 
     <!-- ================ contact section start ================= -->
     <section class="contact-section section_padding">
