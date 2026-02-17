@@ -84,7 +84,7 @@ WSGI_APPLICATION = "project.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "mydb",
+        "NAME": "job_board",
         "USER": "abdalah",
         "PASSWORD": "a12345678",
         "HOST": "127.0.0.1",
@@ -149,12 +149,18 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "abdalah09941@gmail.com" 
+EMAIL_HOST_USER = "abdalah09941@gmail.com"
 EMAIL_HOST_PASSWORD = "zltfxlbhdlpexept"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+
+# celery
+
+CELERY_RESULT_BACKEND = "redis://localhost:6379"
+CELERY_BROKER_URL = "redis://localhost:6379"
+
 # celery + redis + docker
 
-CELERY_RESULT_BACKEND = "redis://redis:6379"
-CELERY_BROKER_URL = "redis://redis:6379"
+# CELERY_RESULT_BACKEND = "redis://redis:6379"
+# CELERY_BROKER_URL = "redis://redis:6379"

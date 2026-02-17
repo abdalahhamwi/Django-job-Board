@@ -1,4 +1,5 @@
 {% load static %}
+{% block body %} {% endblock body %}
 
 
 <!-- bradcam_area  -->
@@ -78,15 +79,15 @@
                 </div>
                 <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                   <div class="Appointment">
-                   {% if request.user.is_authenticated %}
+                   {% comment %} {% if request.user.is_authenticated %} {% endcomment %}
                     <div class="phone_num d-none d-xl-block">
-                    <a href="{% url 'accounts:profile' %}">Profile</a> 
+                    {% comment %} <a href="{% url 'accounts:profile' %}">Profile</a>  {% endcomment %}
                     </div>
-                    {% else %}
+                    {% comment %} {% else %} {% endcomment %}
                     <div class="phone_num d-none d-xl-block">
                       <a href="{% url 'login' %}">Log in</a>
                     </div>
-                    {% endif %}
+                    {% comment %} {% endif %} {% endcomment %}
 
                     <div class="d-none d-lg-block">
                       <a class="boxed-btn3" href="{% url 'post_job' %}"
@@ -105,8 +106,6 @@
       </div>
     </header>
     <!-- header-end -->
-
-    {% block body %} {% endblock body %}
 
     <!-- footer start -->
     <footer class="footer">
@@ -288,3 +287,5 @@
     </script>
   </body>
 </html>
+
+

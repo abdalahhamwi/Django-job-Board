@@ -1,26 +1,26 @@
 from django.shortcuts import render, redirect
 from .models import Contact
 from .forms import ContactForm
-from django.core.mail import send_mail
-from .tasks import send_email
+from .tasks import send_message_task
+from django.contrib import messages
 
 
 # Create your views here.
 
 
 def contact_view(request):
-
     if request.method == "POST":
         add_contact = ContactForm(request.POST)
         if add_contact.is_valid():
-            add_contact.save()
-            
-            # call celery task
-            send_email.delay()
-            
-            return redirect("home")
+             contact_instance = add_contact.save() 
+             
+        send_message_task.delay(contact_instance.email)
+        
+        messages.add_message(request, messages.INFO, "Your message has been sent successfully.") 
+        return redirect("contact")
+        
         
     else:
         add_contact = ContactForm()
-
+        
     return render(request, "contact.html", {"add_contact": ContactForm})

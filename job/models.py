@@ -8,4 +8,7 @@ class JobApplication(models.Model):
     email = models.EmailField(max_length=100)
     website_portfolio_link = models.URLField(max_length=200, null=True, blank=True)
     cv = models.FileField(upload_to="cv/")
-    cover_letter = models.TextField()
+    cover_letter = models.TextField(max_length=1000)
+
+    def __str__(self):
+        return self.email

@@ -144,26 +144,28 @@
                   {{job_detail.Job_description}}
                 </p>
               </div>
+              {% if job_detail.Responsibility %}
               <div class="single_wrap">
                 <h4>Responsibility</h4>
                    <p>{{job_detail.Responsibility}}
                   </p>
               </div>
+              {% else %}
+              {% endif %}
             </div>
-            
-            <div class="apply_job_form white-bg">
-              <h4>Apply for the job</h4>
-              <form method= "POST" >
-              {% csrf_token %}
-              {% bootstrap_form apply_job %}
-              {% buttons %}
-               <button class="boxed-btn3 w-100" type="submit">
-                        Apply Now
-                      </button>
-              {% endbuttons %}
+          <div class="apply_job_form white-bg">
+          <h4>Apply for the job</h4>
+          <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {% bootstrap_form apply_job %}
+          {% buttons %}
+          <button class="boxed-btn3 w-100" type="submit">
+          Apply Now
+          </button>
+          {% endbuttons %}
+          </form>
+          </div>
 
-            </div>
-            </form>
           </div>
           <div class="col-lg-4">
             <div class="job_sumary">

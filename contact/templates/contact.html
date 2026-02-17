@@ -103,6 +103,13 @@
       </div>
     </div>
     <!--/ bradcam_area  -->
+    {% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
 
     <!-- ================ contact section start ================= -->
     <section class="contact-section section_padding">
