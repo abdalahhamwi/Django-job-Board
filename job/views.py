@@ -3,20 +3,20 @@ from home.models import Post_Job
 from .forms import JobApplicationForm
 from django.contrib import messages
 from django.core.mail import send_mail
-
-
-
+from django.core.paginator import Paginator
 
 # Create your views here.
 
-
 def jobs_views(request):
-
+    
     job_detail = Post_Job.objects.all()
     job_number = Post_Job.objects.count()
-
+    
+    paginator = Paginator(job_detail, 1)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
     return render(
-        request, "jobs.html", {"job_detail": job_detail, "job_number": job_number}
+        request, "jobs.html", {"job_detail": page_obj, "job_number": job_number ,}
     )
 
 
@@ -42,8 +42,7 @@ def job_detail_views(request, slug):
 
     else:
         apply_job = JobApplicationForm()
-
-    job_detail = Post_Job.objects.get(slug=slug)
+        job_detail = Post_Job.objects.get(slug=slug)
 
     return render(
         request, "job_detail.html", {"job_detail": job_detail, "apply_job": apply_job}
