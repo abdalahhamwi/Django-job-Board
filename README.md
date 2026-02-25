@@ -6,6 +6,8 @@ job board platform built with Django, allowing companies to post jobs and users 
 - User authentication (sign up, login, logout).
 - Job management (add, edit, delete jobs).
 - Job listings with details such as title, description, salary, and company.
+- Job search, filtering, and pagination (search by title, location, type
+  salary, results paginated for easier navigation)
 - Blog section for articles or news related to the job market.
 - Contact page with Gmail integration for sending messages.
 - Asynchronous task handling using Celery and Redis
@@ -13,6 +15,28 @@ job board platform built with Django, allowing companies to post jobs and users 
 - **Email notifications**
   sent to users when they apply for jobs and for contact/support   messages (may go to spam if not in inbox)
 
+
+## 🧩 API Architecture
+
+The API layer of this project is built using Django REST Framework (DRF) with a clean and extensible structure.
+All endpoints are implemented using Class-Based Views (CBV) to ensure better organization, reusability, and maintainability of the codebase.
+
+Provide clear separation of concerns
+
+Easier to extend and override
+
+Cleaner handling of HTTP methods (GET, POST, PUT, DELETE)
+
+Better scalability for large projects
+
+### API Endpoints (CBV)
+
+ /api/v2/ListCreate    → GET     (List all jobs)
+ /api/v2/ListCreate    → POST    (Create a new job)
+ /api/v2/jobs/id       → GET    (Retrieve job by ID)
+ /api/v2/jobs/id       → PUT    (Update job)
+ /api/jobs/id          → DELETE (Delete job)
+  
 
 
 ## ⚙️ Tech Stack
@@ -70,13 +94,16 @@ Job-Board/
 ├── accounts/        # User management
 ├── blog/            # Blog section
 ├── contact/         # Contact form and email integration
+├── Frontend-Template/ # Frontend template folder
 ├── home/            # Homepage
 ├── job/             # Core job board app
 ├── media/           # Uploaded files and images
 ├── static/          # CSS/JS/Images
+├── staticfiles/     
 ├── templates/       # HTML templates
 │
-├── Dockerfile       # Docker build instructions
+├── dockerfile       # Docker build instructions
+├── .dockerignore    # gnored files during Docker build
 ├── docker-compose.yml # Container orchestration
 ├── db.sqlite3       # Default database
 ├── manage.py        # Django project manager

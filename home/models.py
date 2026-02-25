@@ -7,7 +7,7 @@ from django.utils.text import slugify
 class Post_Job(models.Model):
 
     type_job = [
-        (" Part-time", "Part-time"),
+        ("Part-time", "Part-time"),
         ("On-site", "On-site"),
         ("Remote", "Remote"),
         ("Hybrid", "Hybrid"),

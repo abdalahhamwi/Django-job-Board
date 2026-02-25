@@ -14,5 +14,5 @@ urlpatterns = [
     #class based view
     path("api/v2/list", api.JobListApi.as_view(), name="JobListApi"),
     path("api/v2/jobs/<int:id>", api.JobDetailApi.as_view(), name="job_detail_api"),
-    path("api/v2/ListCreate/", api.JobListCreateApi.as_view(), name="JobListCreateApi"),
+    path("api/v2/ListCreate", api.JobListCreateApi.as_view(), name="JobListCreateApi"),
 ]
