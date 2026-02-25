@@ -9,7 +9,8 @@ job board platform built with Django, allowing companies to post jobs and users 
 - Job search, filtering, and pagination (search by title, location, type
   salary, results paginated for easier navigation)
 - Blog section for articles or news related to the job market.
-- Contact page with Gmail integration for sending messages.
+- Contact page with Gmail integration for sending messages and notifications 
+  when users apply for a job.
 - Asynchronous task handling using Celery and Redis
 
 - **Email notifications**
@@ -29,15 +30,19 @@ Cleaner handling of HTTP methods (GET, POST, PUT, DELETE)
 
 Better scalability for large projects
 
-### API Endpoints (CBV)
+ ### 📦 API Endpoints (CBV)
 
  /api/v2/ListCreate    → GET     (List all jobs)
- /api/v2/ListCreate    → POST    (Create a new job)
- /api/v2/jobs/id       → GET    (Retrieve job by ID)
- /api/v2/jobs/id       → PUT    (Update job)
- /api/jobs/id          → DELETE (Delete job)
-  
 
+ /api/v2/ListCreate    → POST    (Create a new job)
+
+ /api/v2/jobs/<id>       → GET    (Retrieve job by ID)
+
+ /api/v2/jobs/<id>       → PUT    (Update job)
+
+ /api/jobs/<id>          → DELETE (Delete job)
+
+  
 
 ## ⚙️ Tech Stack
 - **Backend:** Django (Python) , Django REST Framework , Redis , Celery

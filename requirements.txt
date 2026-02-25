@@ -16,7 +16,9 @@ django-bootstrap4==26.1
 django-filter==25.2
 djangorestframework==3.16.1
 docker==7.1.0
+drf-yasg==1.21.15
 idna==3.11
+inflection==0.5.1
 kombu==5.6.2
 Markdown==3.10
 packaging==26.0
@@ -25,7 +27,8 @@ prompt_toolkit==3.0.52
 psycopg2-binary==2.9.11
 pycparser==3.0
 python-dateutil==2.9.0.post0
-pytz==2020.1
+pytz==2025.2
+PyYAML==6.0.3
 redis==7.1.0
 requests==2.32.5
 setuptools==80.9.0
@@ -35,6 +38,7 @@ sqlparse==0.5.5
 typing_extensions==4.15.0
 tzdata==2025.3
 tzlocal==5.3.1
+uritemplate==4.2.0
 urllib3==2.6.3
 vine==5.1.0
 wcwidth==0.5.3
