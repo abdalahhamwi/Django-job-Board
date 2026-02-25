@@ -147,7 +147,7 @@ MEDIA_URL = "/media/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-# Gmail SMTP
+ # Gmail SMTP
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
@@ -157,12 +157,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 
-# celery
-
-# CELERY_RESULT_BACKEND = "redis://localhost:6379"
-# CELERY_BROKER_URL = "redis://localhost:6379"
 
 # celery + redis + docker
 
-# CELERY_RESULT_BACKEND = "redis://redis:6379"
-# CELERY_BROKER_URL = "redis://redis:6379"
+CELERY_RESULT_BACKEND = "redis://redis:6379"
+CELERY_BROKER_URL = "redis://redis:6379"
