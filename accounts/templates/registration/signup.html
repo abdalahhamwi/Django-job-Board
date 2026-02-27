@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load bootstrap4 %}
+  <!-- bradcam_area  -->
+  <div class="bradcam_area bradcam_bg_1"></div>
+  <!--/ bradcam_area  -->
+
+ <div class="job_details_area">
+      <div class="container">
+          <div>
+            <div class="apply_job_form white-bg">
+               <div class="apply_job_form white-bg">
+              <form method= "POST" >
+              {% csrf_token %}
+              {% bootstrap_form form %}
+              {% buttons %}
+               <button class="boxed-btn3 w-100" type="submit">
+                        signup
+                      </button>
+                      {# Assumes you set up the password_reset view in your URLConf #}
+              {% endbuttons %}
+            </div>
+            </form>
+            </div>
+          </div>
+          <div class="col-lg-4">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}

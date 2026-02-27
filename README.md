@@ -32,15 +32,15 @@ Better scalability for large projects
 
  ### 📦 API Endpoints (CBV)
 
- /api/v2/ListCreate    → GET     (List all jobs)
+ /api/v2/ListCreate      → GET     (List all jobs)
 
- /api/v2/ListCreate    → POST    (Create a new job)
+ /api/v2/ListCreate      → POST    (Create a new job)
 
- /api/v2/jobs/<id>       → GET    (Retrieve job by ID)
+ /api/v2/jobs/<id>       → GET     (Retrieve job by ID)
 
- /api/v2/jobs/<id>       → PUT    (Update job)
+ /api/v2/jobs/<id>       → PUT     (Update job)
 
- /api/jobs/<id>          → DELETE (Delete job)
+ /api/jobs/<id>          → DELETE  (Delete job)
 
   
 
